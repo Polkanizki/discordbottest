@@ -4,7 +4,7 @@ client.login('process.env.BOT_TOKEN');
 
 client.on('ready', message => {
   console.log(`Bot attivo su ${client.user.tag}`);
-}
+});
 
 client.on('message', message => {
   if(message.content === 'ping') {
