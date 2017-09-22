@@ -400,6 +400,12 @@ client.on('message', message => {
 	}
 });
 
+client.on('message', message => {
+	if(message.content === 'Ciao belo') {
+		message.channel.send('**Sciao bielo**');
+	}
+});
+
 /*client.on('message', message => {
 	if (!message.guild) return;
 	if (message.guild.id == '359476597440512010') {
