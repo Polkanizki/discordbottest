@@ -154,7 +154,6 @@ client.on('message', message => {
 				}
 			}
 		} else if (message.content === '/a testing' || message.content === '/a lol' || message.content === '/a pokemon' || message.content === '/a hearthstone' || message.content === '/r testing' || message.content === '/r lol' || message.content === '/r pokemon' || message.content === '/r hearthstone') {
-			message.author.send("Scrivi nel canale #abilitazione-canali per le richieste dei ruoli sul Server PAGHM");
 			message.delete();
 		}
 	}
