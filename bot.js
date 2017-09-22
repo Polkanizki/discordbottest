@@ -400,11 +400,7 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {
-	if(message.content === 'Ciao belo') {
-		message.channel.send('**Sciao bielo**');
-	}
-});
+
 
 /*client.on('message', message => {
 	if (!message.guild) return;
