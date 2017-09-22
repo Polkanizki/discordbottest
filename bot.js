@@ -402,7 +402,11 @@ client.on('message', message => {
 	}
 });
 
-
+client.on('message', message => {
+	if(message.content === "-test") {
+		message.admin.send('Prova');
+	}
+});
 
 /*client.on('message', message => {
 	if (!message.guild) return;
