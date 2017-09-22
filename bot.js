@@ -400,11 +400,7 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {
-	if(message.content == '!scipola') {
-		message.channel.send('Non lo so');
-	}
-});
+
 
 /*client.on('message', message => {
 	if (!message.guild) return;
