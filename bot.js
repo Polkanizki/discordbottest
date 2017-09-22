@@ -10,7 +10,7 @@ var giornisettimana = ["Domenica", "Lunedi", "Martedi", "Mercoledi", "Giovedi", 
 var mese = data.getMonth();
 var mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
 var anno = data.getFullYear();
-require('events').EventEmitter.prototype._maxListeners = 100;
+var admin = '187657725407264768';
 
 client.login(process.env.BOT_TOKEN);
 
@@ -24,10 +24,12 @@ client.on('ready', () => {
 
 client.on('reconnecting', () => {
 	console.log("Errore di connessione. Riconnessione in corso...");
+	message.admin.send('Errore di connessione. Riconnessione in corso...');
 });
 
 client.on('resume', () => {
 	console.log("Riconnessione effettuata.");
+	message.admin.send('Riconnessione effettuata.');
 });
 
 client.on('message', message => {
