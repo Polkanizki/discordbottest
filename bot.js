@@ -400,11 +400,7 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {
-	if(message.content === '/123prova') {
-		message.channel.send('Funzia');
-	}
-});
+
 
 /*client.on('message', message => {
 	if (!message.guild) return;
