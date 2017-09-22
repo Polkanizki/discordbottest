@@ -217,7 +217,7 @@ client.on('message', message => {
 						name: message.author.username,
 						icon_url: message.author.avatarURL
 					},
-					title: `${nome}`,
+					title: `${nome} ← Clicca per entrare`,
 					url: `${link}`,
 					fields: [{
 						name: "Argomento server",
@@ -247,7 +247,7 @@ client.on('message', message => {
 						name: message.author.username,
 						icon_url: message.author.avatarURL
 					},
-					title: `${nome}`,
+					title: `${nome} ← Click to join`,
 					url: `${link}`,
 					fields: [{
 						name: "Server argument",
