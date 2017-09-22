@@ -24,12 +24,10 @@ client.on('ready', () => {
 
 client.on('reconnecting', () => {
 	console.log("Errore di connessione. Riconnessione in corso...");
-	message.admin.send('Errore di connessione. Riconnessione in corso...');
 });
 
 client.on('resume', () => {
 	console.log("Riconnessione effettuata.");
-	message.admin.send('Riconnessione effettuata.');
 });
 
 client.on('message', message => {
@@ -399,12 +397,6 @@ client.on('message', message => {
 				}
 			}});
 		}
-	}
-});
-
-client.on('message', message => {
-	if(message.content === "-test") {
-		message.admin.send('Prova');
 	}
 });
 
