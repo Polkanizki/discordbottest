@@ -70,7 +70,7 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {
+/*client.on('message', message => {
 	if (message.content === '/shutdown') {
 		if (message.author.id === '187657725407264768') {
 			message.channel.send("**Spegnimento...**")
@@ -82,7 +82,7 @@ client.on('message', message => {
 			console.log(`${message.author.tag} ha tentato di spegnere il bot`);
 		}
 	}
-});
+});*/
 
 client.on('message', message => {
 	if (!message.guild) return;
