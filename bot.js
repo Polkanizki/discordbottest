@@ -203,6 +203,7 @@ client.on('message', message => {
 			var nome = server[1];
 			var descrizione = server[2];
 			var link = server[3];
+			//prova
 			var membri = server[4];
 			if (message.channel.id == '359658704670425098' || message.channel.id == '359663809180467200') {
 				message.delete();
