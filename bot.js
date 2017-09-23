@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+client.login(process.env.BOT_TOKEN);
 
 var data = new Date();
 var ore = data.getHours();
@@ -11,8 +12,6 @@ var mese = data.getMonth();
 var mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
 var anno = data.getFullYear();
 var admin = '187657725407264768';
-
-client.login(process.env.BOT_TOKEN);
 
 client.on('ready', () => {
     console.log(`Il bot e' stato avviato su ${client.user.tag}!, con ${client.users.size} utenti, in ${client.channels.size} canali di ${client.guilds.size} server.`);
@@ -159,7 +158,6 @@ client.on('message', message => {
 });
 
 // Canali vocali
-
 client.on('message', message => {
     if (!message.guild) return;
     if (message.content === '/join') {
@@ -185,10 +183,7 @@ client.on('message', message => {
 	}
 });
 
-//
-
 //Prove
-
 client.on('message', message => {
 	if (message.content === '/messaggiobello') {
 		message.channel.send({embed: {
@@ -336,5 +331,3 @@ client.on('message', message => {
 		}});
 	}
 });*/
-
-//
