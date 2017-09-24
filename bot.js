@@ -59,6 +59,10 @@ client.on('message', message => {
 				name: "Anche privato",
 				value: "- il mio avatar\n- /help",
 				inline: true
+			},
+			{
+				name: "Contattami",
+				value: "Per ulteriori suggerimenti/feedback parla in <#360812737841856513>"
 			}
 			],
 			footer: {
