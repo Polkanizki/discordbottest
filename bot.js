@@ -64,6 +64,9 @@ client.on('resume', () => {
 			var stato = `Usa /help per una lista di comandi`;
 			break;
 	}
+	client.user.setPresence({ game: {
+		name: `${stato}`, type: 0
+	}});
 });
 
 client.on('message', message => {
