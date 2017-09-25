@@ -26,6 +26,9 @@ client.on('reconnecting', () => {
 
 client.on('resume', () => {
 	console.log("Riconnessione effettuata.");
+});
+
+setInterval(function() {
 	var rand = Math.floor((Math.random() * 10) + 1);
 	switch(stato) {
 		case '1':
@@ -67,7 +70,7 @@ client.on('resume', () => {
 	client.user.setPresence({ game: {
 		name: `${stato}`, type: 0
 	}});
-});
+}, 3600000);
 
 client.on('message', message => {
     if (message.content === '/ping') {
