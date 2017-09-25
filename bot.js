@@ -26,6 +26,44 @@ client.on('reconnecting', () => {
 
 client.on('resume', () => {
 	console.log("Riconnessione effettuata.");
+	var rand = Math.floor((Math.random() * 10) + 1);
+	switch(stato) {
+		case '1':
+			var stato = `Ascoltare musica`;
+			break;
+			
+		case '2':
+			var stato = `~Polkanizki`;
+			break;
+
+		case '3':
+			var stato = `${client.guilds.size} server`;
+			break;
+
+		case '4':
+			var stato = `Nderr merg`;
+			break;
+
+		case '5':
+			var stato = `Yasuo Cancro`;
+			break;
+
+		case '6':
+			var stato = `spoilerare che L muore`;
+			break;
+
+		case '7':
+			var stato = `Gang`;
+			break;
+
+		case '8':
+			var stato = `Fare il caffe`;
+			break;
+
+		default:
+			var stato = `Usa /help per una lista di comandi`;
+			break;
+	}
 });
 
 client.on('message', message => {
