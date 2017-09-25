@@ -275,11 +275,7 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {
-	if(message.content == '/provaemoji') {
-		message.channel.send('<:okageuse:358027075539435522>');
-	}
-});
+
 
 /*client.on('message', message => {
 	if (!message.guild) return;
