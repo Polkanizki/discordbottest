@@ -30,7 +30,7 @@ client.on('resume', () => {
 
 setInterval(function() {
 	var rand = Math.floor((Math.random() * 10) + 1);
-	switch(stato) {
+	switch(rand) {
 		case '1':
 			var stato = `Ascoltare musica`;
 			break;
