@@ -70,7 +70,7 @@ setInterval(function() {
 	client.user.setPresence({ game: {
 		name: `${stato}`, type: 0
 	}});
-}, 3600000);
+}, 10000);
 
 client.on('message', message => {
     if (message.content === '/ping') {
