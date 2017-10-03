@@ -131,78 +131,74 @@ client.on('message', message => {
 });*/
 
 client.on('message', message => {
-	if (!message.guild) return;
-	if (message.guild.id === '187661382668386304') {
-		if (message.channel.id === '359094130976096269') {
-			if (message.content === '/a testing') {
-				let ruolo = message.guild.roles.find("name", "Test");
-				if (message.member.roles.has(ruolo.id)) {
-					message.reply("Possiedi già questo ruolo. Usa /r <ruolo> per rimuoverlo");
-				} else {
-					message.member.addRole('268306807301210122');
-					message.reply("Sei stato abilitato per i **Canali Test**!");
-				}
-			} else if (message.content === '/r testing') {
-				let ruolo = message.guild.roles.find("name", "Test");
-				if (message.member.roles.has(ruolo.id)) {
-					message.member.removeRole('268306807301210122');
-					message.reply("Sei stato rimosso dai **Canali Test**!");
-				} else {
-					message.reply("Non possiedi questo ruolo. Usa /a <ruolo> per aggiungerlo");
-				}
-			} else if (message.content === '/a lol') {
-				let ruolo = message.guild.roles.find("name", "League of Legends");
-				if (message.member.roles.has(ruolo.id)) {
-					message.reply("Possiedi già questo ruolo. Usa /r <ruolo> per rimuoverlo");
-				} else {
-					message.member.addRole('247751384345083904');
-					message.reply("Sei stato abilitato per i canali di **League of Legends**!");
-				}
-			} else if (message.content === '/r lol') {
-				let ruolo = message.guild.roles.find("name", "League of Legends");
-				if (message.member.roles.has(ruolo.id)) {
-					message.member.removeRole('247751384345083904');
-					message.reply("Sei stato rimosso dai canali di **League of Legends**!");
-				} else {
-					message.reply("Non possiedi questo ruolo. Usa /a <ruolo> per aggiungerlo");
-				}
-			} else if (message.content === '/a pokemon') {
-				let ruolo = message.guild.roles.find("name", "Pokémon");
-				if (message.member.roles.has(ruolo.id)) {
-					message.reply("Possiedi già questo ruolo. Usa /r <ruolo> per rimuoverlo");
-				} else {
-					message.member.addRole('251767481922879488');
-					message.reply("Sei stato abilitato per i canali di **Pokemon**!");
-				}
-			} else if (message.content === '/r pokemon') {
-				let ruolo = message.guild.roles.find("name", "Pokémon");
-				if (message.member.roles.has(ruolo.id)) {
-					message.member.removeRole('251767481922879488');
-					message.reply('Sei stato rimosso dai canali di **Pokemon**!');
-				} else {
-					message.reply("Non possiedi questo ruolo. Usa /a <ruolo> per aggiungerlo");
-				}
-			} else if (message.content === '/a hearthstone') {
-				let ruolo = message.guild.roles.find("name", "HearthStone");
-				if (message.member.roles.has(ruolo.id)) {
-					message.reply("Possiedi già questo ruolo. Usa /r <ruolo> per rimuoverlo");
-				} else {
-					message.member.addRole('346446742616801280');
-					message.reply("Sei stato abilitato per i canali di **HearthStone**!");
-				}
-			} else if (message.content === '/r hearthstone') {
-				let ruolo = message.guild.roles.find("name", "HearthStone");
-				if (message.member.roles.has(ruolo.id)) {
-					message.member.removeRole('346446742616801280');
-					message.reply("Sei stato rimosso dai canali di **HearthStone**!");
-				} else {
-					message.reply("Non possiedi questo ruolo. Usa /a <ruolo> per aggiungerlo");
-				}
-			}
-		} else if (message.content === '/a testing' || message.content === '/a lol' || message.content === '/a pokemon' || message.content === '/a hearthstone' || message.content === '/r testing' || message.content === '/r lol' || message.content === '/r pokemon' || message.content === '/r hearthstone') {
-			message.delete();
-		}
-	}
+    if(!message.guild) return;
+	if(message.guild.id == '187661382668386304') {
+        if (message.content === '/a testing') {
+            let ruolo = message.guild.roles.find("name", "Test");
+            if (message.member.roles.has(ruolo.id)) {
+                message.reply("Possiedi già questo ruolo. Usa /r <ruolo> per rimuoverlo");
+            } else {
+                message.member.addRole('268306807301210122');
+                message.reply("Sei stato abilitato per i **Canali Test**!");
+            }
+        } else if (message.content === '/r testing') {
+            let ruolo = message.guild.roles.find("name", "Test");
+            if (message.member.roles.has(ruolo.id)) {
+                message.member.removeRole('268306807301210122');
+                message.reply("Sei stato rimosso dai **Canali Test**!");
+            } else {
+                message.reply("Non possiedi questo ruolo. Usa /a <ruolo> per aggiungerlo");
+            }
+        } else if (message.content === '/a lol') {
+            let ruolo = message.guild.roles.find("name", "League of Legends");
+            if (message.member.roles.has(ruolo.id)) {
+                message.reply("Possiedi già questo ruolo. Usa /r <ruolo> per rimuoverlo");
+            } else {
+                message.member.addRole('247751384345083904');
+                message.reply("Sei stato abilitato per i canali di **League of Legends**!");
+            }
+        } else if (message.content === '/r lol') {
+            let ruolo = message.guild.roles.find("name", "League of Legends");
+            if (message.member.roles.has(ruolo.id)) {
+                message.member.removeRole('247751384345083904');
+                message.reply("Sei stato rimosso dai canali di **League of Legends**!");
+            } else {
+                message.reply("Non possiedi questo ruolo. Usa /a <ruolo> per aggiungerlo");
+            }
+        } else if (message.content === '/a pokemon') {
+            let ruolo = message.guild.roles.find("name", "Pokémon");
+            if (message.member.roles.has(ruolo.id)) {
+                message.reply("Possiedi già questo ruolo. Usa /r <ruolo> per rimuoverlo");
+            } else {
+                message.member.addRole('251767481922879488');
+                message.reply("Sei stato abilitato per i canali di **Pokemon**!");
+            }
+        } else if (message.content === '/r pokemon') {
+            let ruolo = message.guild.roles.find("name", "Pokémon");
+            if (message.member.roles.has(ruolo.id)) {
+                message.member.removeRole('251767481922879488');
+                message.reply('Sei stato rimosso dai canali di **Pokemon**!');
+            } else {
+                message.reply("Non possiedi questo ruolo. Usa /a <ruolo> per aggiungerlo");
+            }
+        } else if (message.content === '/a hearthstone') {
+            let ruolo = message.guild.roles.find("name", "HearthStone");
+            if (message.member.roles.has(ruolo.id)) {
+                message.reply("Possiedi già questo ruolo. Usa /r <ruolo> per rimuoverlo");
+            } else {
+                message.member.addRole('346446742616801280');
+                message.reply("Sei stato abilitato per i canali di **HearthStone**!");
+            }
+        } else if (message.content === '/r hearthstone') {
+            let ruolo = message.guild.roles.find("name", "HearthStone");
+            if (message.member.roles.has(ruolo.id)) {
+                message.member.removeRole('346446742616801280');
+                message.reply("Sei stato rimosso dai canali di **HearthStone**!");
+            } else {
+                message.reply("Non possiedi questo ruolo. Usa /a <ruolo> per aggiungerlo");
+            }
+        }
+    }
 });
 
 // Canali vocali
