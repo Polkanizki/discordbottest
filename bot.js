@@ -308,10 +308,6 @@ client.on('message', message => {
 	}
 });
 
-client.on('messageReactionAdd', message => {
-	message.react("💣");
-});
-
 /*client.on('message', message => {
 	if (!message.guild) return;
 	if (message.guild.id == '359476597440512010') {
