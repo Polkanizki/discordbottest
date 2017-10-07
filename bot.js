@@ -298,15 +298,17 @@ client.on('message', message => {
 
 
 
-/*client.on('message', message => {
-	if (!message.guild) return;
-	if (message.guild.id == '359476597440512010') {
-		if (message.channel.id == '359658782751457290' || message.channel.id == '359658704670425098') {
-			message.react("👎")
-			.then(message.react("👍"));
+client.on('message', message => {
+	if(!message.guild) return;
+	if(message.guild.id == '359476597440512010') {
+		if(message.channel.id == '359658782751457290' || message.channel.id == '359658704670425098') {
+			if(message.content == 'prova') {
+				message.react("👎")
+				.then(message.react("👍"));
+			}
 		}
 	}
-});*/
+});
 
 /*client.on('message', message => {
 	if (!message.guild) return;
