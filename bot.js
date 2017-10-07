@@ -302,8 +302,8 @@ client.on('message', message => {
 	if(!message.guild) return;
 	if(message.guild.id == '360812737422557184') {
 		if(message.content == 'prova') {
-			message.react("👎")
-			.then(message.react("👍"));
+			message.react("👎");
+			message.react("👍");
 		}
 	}
 });
