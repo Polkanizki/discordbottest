@@ -309,7 +309,7 @@ client.on('message', message => {
 });
 
 client.on('messageReactionAdd', message => {
-	messsage.react("💣");
+	message.react("💣");
 });
 
 /*client.on('message', message => {
