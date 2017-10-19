@@ -74,12 +74,14 @@ client.on('resume', () => {
 
 client.on('message', message => {
     if (message.content === '/ping') {
+		console.log(`Ho risposto a ${message.author.tag}`);
         message.channel.send('pong');
     }
 });
 
 client.on('message', message => {
     if (message.content === 'il mio avatar') {
+		console.log(`Ho risposto a ${message.author.tag}`);
         message.reply(message.author.avatarURL);
     }
 });
@@ -137,46 +139,56 @@ client.on('message', message => {
             let ruolo = message.guild.roles.find("name", "League of Legends");
             if(message.member.roles.has(ruolo.id)) {
                 message.member.removeRole('247751384345083904');
-                message.reply('Sei stato rimosso dai canali di **League of Legends**!');
+				message.reply('Sei stato rimosso dai canali di **League of Legends**!');
+				console.log(`Ruolo di League of Legends rimosso a ${message.author.tag}`);
             } else {
                 message.member.addRole('247751384345083904');
-                message.reply('Sei stato abilitato per i canali di **League of Legends**!');
+				message.reply('Sei stato abilitato per i canali di **League of Legends**!');
+				console.log(`Ruolo di League of Legends aggiunto a ${message.author.tag}`);
             }
         } else if(message.content == '/pokemon') {
             let ruolo = message.guild.roles.find("name", "Pokémon");
             if(message.member.roles.has(ruolo.id)) {
                 message.member.removeRole('251767481922879488');
-                message.reply('Sei stato rimosso dai canali di **Pokémon**!');
+				message.reply('Sei stato rimosso dai canali di **Pokémon**!');
+				console.log(`Ruolo di Pokémon rimosso a ${message.author.tag}`);
             } else {
                 message.member.addRole('251767481922879488');
-                message.reply('Sei stato abilitato per i canali di **Pokémon**!');
+				message.reply('Sei stato abilitato per i canali di **Pokémon**!');
+				console.log(`Ruolo di Pokémon aggiunto a ${message.author.tag}`);
             }
         } else if(message.content == '/hearthstone') {
             let ruolo = message.guild.roles.find("name", "HearthStone");
             if(message.member.roles.has(ruolo.id)) {
                 message.member.removeRole('346446742616801280');
-                message.reply('Sei stato rimosso dai canali di **HearthStone**!');
+				message.reply('Sei stato rimosso dai canali di **HearthStone**!');
+				console.log(`Ruolo di Hearthstone rimosso a ${message.author.tag}`);
             } else {
                 message.member.addRole('346446742616801280');
-                message.reply('Sei stato abilitato per i canali di **HearthStone**!');
+				message.reply('Sei stato abilitato per i canali di **HearthStone**!');
+				console.log(`Ruolo di Heathstone aggiunto a ${message.author.tag}`);
             }
         } else if(message.content == '/minecraft') {
             let ruolo = message.guild.roles.find("name", "Minecraft");
             if(message.member.roles.has(ruolo.id)) {
                 message.member.removeRole('364880491763204099');
-                message.reply('Sei stato rimosso dai canali di **Minecraft**!');
+				message.reply('Sei stato rimosso dai canali di **Minecraft**!');
+				console.log(`Ruolo di Minecraft rimosso a ${message.author.tag}`);
             } else {
                 message.member.addRole('364880491763204099');
-                message.reply('Sei stato abilitato per i canali di **Minecraft**!');
+				message.reply('Sei stato abilitato per i canali di **Minecraft**!');
+				console.log(`Ruolo di Minecraft aggiunto a ${message.author.tag}`);
             }
         } else if(message.content == '/csgo') {
             let ruolo = message.guild.roles.find("name", "CS:GO");
             if(message.member.roles.has(ruolo.id)) {
                 message.member.removeRole('364881043339083782');
-                message.reply('Sei stato rimosso dai canali di **CS:GO**!');
+				message.reply('Sei stato rimosso dai canali di **CS:GO**!');
+				console.log(`Ruolo di CS:GO rimosso a ${message.author.tag}`);
             } else {
                 message.member.addRole('364881043339083782');
-                message.reply('Sei stato abilitato per i canali di **CS:GO**!');
+				message.reply('Sei stato abilitato per i canali di **CS:GO**!');
+				console.log(`Ruolo di CS:GO aggiunto a ${message.author.tag}`);
             }
         }
     }
