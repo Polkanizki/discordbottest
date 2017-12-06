@@ -132,6 +132,7 @@ client.on('message', message => {
 	}
 });*/
 
+/*
 client.on('message', message => {
     if(!message.guild) return;
     if(message.guild.id == '187661382668386304') {
@@ -192,6 +193,23 @@ client.on('message', message => {
             }
         }
     }
+});
+*/
+
+client.on('message', message => {
+	if(!message.guild) return;
+	if(message.guild.id == '187661382668386304') {
+		if(message.content == '/md5') {
+			let ruolo = message.guild.roles.find("name", "Test");
+			if(message.member.roles.has(ruolo.id)) {
+				message.member.removeRole('387966287843819521');
+				message.reply('Sei stato rimosso dalla categoria **Test**');
+			} else {
+				message.member.addRole('387966287843819521');
+				message.reply('Sei stato aggiunto alla categoria **Test**');
+			}
+		}
+	}
 });
 
 // Canali vocali
