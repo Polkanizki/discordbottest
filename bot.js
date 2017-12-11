@@ -334,6 +334,8 @@ client.on('message', message => {
 		if(message.content == 'prova') {
 			message.react("👎");
 			message.react("👍");
+			message.channel.send(message.member.joinedAt);
+			message.channel.send(message.member.joinedTimestamp);
 		}
 	}
 });
