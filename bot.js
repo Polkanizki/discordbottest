@@ -283,6 +283,17 @@ client.on('message', message => {
 	}
 })
 
+// prova
+
+client.on('message', message => {
+	if(message.member.presence(presence => presence.status == "Brawlhalla")) {
+		let ruolo = message.guild.roles.find("name", "Brawlhalla");
+		if(message.member.roles.has(ruolo.id)) {
+			message.member.addRole('390981605759385601');
+		}
+	}
+});
+
 client.on('message', message => {
 	if (!message.guild) return;
 	if (message.guild.id == '359476597440512010') {
