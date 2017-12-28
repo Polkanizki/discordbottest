@@ -338,7 +338,6 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	if(!message.guild) return;
 	if(message.react == '👍') {
 		reaction.author.message.send('ok.');
 	}
@@ -346,14 +345,12 @@ client.on('message', message => {
 
 client.on('message', message => {
 	if(!message.guild) return;
-	if(message.guild.id == '360812737422557184') {
 		if(message.content == 'prova') {
 			message.react("👎");
 			message.react("👍");
 			message.channel.send(message.member.joinedAt);
 			message.channel.send(message.member.joinedTimestamp);
 		}
-	}
 });
 
 /*client.on('message', message => {
