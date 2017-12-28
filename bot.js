@@ -283,16 +283,16 @@ client.on('message', message => {
 	}
 })
 
-// prova
+// prova sospesa
 
-client.on('message', message => {
+/*client.on('message', message => {
 	if(message.member.presence(presence => presence.status == "Brawlhalla")) {
 		let ruolo = message.guild.roles.find("name", "Brawlhalla");
 		if(message.member.roles.has(ruolo.id)) {
 			message.member.addRole('390981605759385601');
 		}
 	}
-});
+});*/ //Sospeso
 
 client.on('message', message => {
 	if (!message.guild) return;
