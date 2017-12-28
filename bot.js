@@ -339,7 +339,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 	if(message.react == '👍') {
-		reaction.message.author.send('ok.');
+		reaction.message.author.send("ok.");
 	}
 });
 
