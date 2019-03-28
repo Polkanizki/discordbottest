@@ -297,7 +297,7 @@ client.on('message', message => {
 client.on('message', message => {
 	if (!message.guild) return;
 	if (message.guild.id == '359476597440512010') {
-		if (message.content.startsWith('!dioporcospam')) {
+		if (message.content.startsWith('!spam')) {
 			var spam = message.content.split('?');
 			var server = spam[1].split(';');
 			var tipo = server[0];
@@ -346,10 +346,12 @@ client.on('message', message => {
 client.on('message', message => {
 	if(!message.guild) return;
 		if(message.content == 'prova') {
-			message.react("👎");
-			message.react("👍");
-			message.channel.send(message.member.joinedAt);
-			message.channel.send(message.member.joinedTimestamp);
+			// message.react("👎");
+			// message.react("👍");
+			message.channel.send({
+				content: ['We waglio'],
+				react: ["👍"]
+			});
 		}
 });
 
