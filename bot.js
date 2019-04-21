@@ -274,7 +274,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 	if (message.content === '/ruolo') {
-		let ruolo = message.guild.roles.find("name", "League of Legends🎮");
+		let ruolo = message.guild.roles.find("name", "Test");
 		if (message.member.roles.has(ruolo.id)) {
 			message.channel.send("Si");
 		} else {
