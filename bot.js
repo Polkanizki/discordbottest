@@ -15,7 +15,9 @@ var admin = '187657725407264768';
 
 client.on('ready', () => {
     console.log(`Il bot e' stato avviato su ${client.user.tag}!, con ${client.users.size} utenti, in ${client.channels.size} canali di ${client.guilds.size} server.`);
-	client.user.setActivity(`${client.guilds.size} server | https://discord.gg/DEGhsTh | ~Polkanizki`);
+	client.user.setPresence({ game: {
+		name: `${client.guilds.size} server | https://discord.gg/DEGhsTh | ~Polkanizki`, type: 0
+	}});
 });
 
 client.on('reconnecting', () => {
