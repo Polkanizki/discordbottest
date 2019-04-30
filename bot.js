@@ -357,25 +357,13 @@ client.on('message', message => {
 			const emoji = message.guild.emojis.find('name', 'ChatMatch');
 			message.react(emoji);
 		});
+	}
+});
 
-		const filter = (reaction, user) => {
-			return [emoji].includes(reaction.emoji.name) && user.id === message.author.id;
-		};
-
-		message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time']})
-			.then(collected => {
-				const reaction = collected.first();
-
-				if(reaction.emoji.name === 'ChatMatch') {
-					message.channel.send("Funziono");
-				} else {
-					message.channel.send("Non funziono");
-				}
-				message.channel.send(reaction.emoji.name);
-			})
-			.catch(collected => {
-				message.channel.delete();
-			});
+client.on('messageReactionAdd', (reaction, user) => {
+	if(message.content === "Scegli un ruolo" && reaction.emoji.name == "ChatMatch") {
+		let role = message.guild.roles.find('name', "Utente Chat Match");
+		message.member.addRole(role);
 	}
 });
 
