@@ -354,14 +354,28 @@ client.on('message', message => {
 	if(message.content == '/ruoli') {
 		message.channel.send("Scegli un ruolo")
 		.then(function (message) {
-			const emoji = message.guild.emojis.find('name', 'Striscia');
+			const emoji = message.guild.emojis.find('name', 'ChatMatch');
 			message.react(emoji);
 		});
-	}
-});
 
-client.on('messageReactionAdd', (reaction, user) => {
-	//
+		const filter = (reaction, user) => {
+			return [emoji].includes(reaction.emoji.name) && user.id === message.author.id;
+		};
+
+		message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time']})
+			.then(collected => {
+				const reaction = collected.first();
+
+				if(reaction.emoji.name === emoji) {
+					message.channel.send("Funziono");
+				} else {
+					message.channel.send("Non funziono");
+				}
+			})
+			.catch(collected => {
+				message.delete();
+			});
+	}
 });
 
 /*Success*/
