@@ -360,15 +360,14 @@ client.on('message', message => {
 	}
 });
 
-client.on('raw', event => {
-	console.log('\nRaw event data:\n', event);
-	if(reaction.emoji.name == "ChatMatch") {
-		reaction.member.addRole(message.guild.roles.find('name', "Utente Chat Match"))
-			.then(console.log)
-			.catch(console.error);
-		reaction.message.author.send("**__Ora hai accesso alla categoria!__**");
-	}
-});
+// client.on('messageReactionAdd', (reaction, user) => {
+// 	if(reaction.emoji.name == "ChatMatch") {
+// 		user.member.addRole(message.guild.roles.find('name', "Utente Chat Match"))
+// 			.then(console.log)
+// 			.catch(console.error);
+// 		reaction.message.author.send("**__Ora hai accesso alla categoria!__**");
+// 	}
+// });
 
 /*Success*/
 
