@@ -358,7 +358,7 @@ client.on('message', message => {
 client.on('message', message => {
 	if(!message.guild) return;
 	if(message.content == '/ruoli') {
-		message.channel.send("Scegli un ruolo");
+		message.channel.send("Scegli un ruolo")
 		.then(message.react('557223141957435403'));
 	}
 });
