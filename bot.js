@@ -366,7 +366,7 @@ client.on('message', message => {
 			.then(collected => {
 				const reaction = collected.first();
 
-				if(reaction.emoji.name === emoji) {
+				if(reaction.emoji === emoji) {
 					message.channel.send("Funziono");
 				} else {
 					message.channel.send("Non funziono");
