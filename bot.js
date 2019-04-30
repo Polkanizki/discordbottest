@@ -360,7 +360,8 @@ client.on('message', message => {
 	}
 });
 
-client.on('messageReactionAdd', (reaction, user) => {
+client.on('raw', event => {
+	console.log('\nRaw event data:\n', event);
 	if(reaction.emoji.name == "ChatMatch") {
 		reaction.member.addRole(message.guild.roles.find('name', "Utente Chat Match"))
 			.then(console.log)
