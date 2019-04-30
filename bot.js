@@ -362,7 +362,9 @@ client.on('message', message => {
 
 client.on('messageReactionAdd', (reaction, user) => {
 	if(reaction.emoji.name == "ChatMatch") {
-		reaction.member.addRole(message.guild.roles.find('name', "Utente Chat Match"));
+		reaction.member.addRole(message.guild.roles.find('name', "Utente Chat Match"))
+			.then(console.log)
+			.catch(console.error);
 		reaction.message.author.send("**__Ora hai accesso alla categoria!__**");
 	}
 });
