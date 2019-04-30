@@ -362,8 +362,7 @@ client.on('message', message => {
 
 client.on('messageReactionAdd', (reaction, user) => {
 	if(reaction.emoji.name == "ChatMatch") {
-		const role = message.guild.roles.find('name', "Utente Chat Match");
-		message.member.addRole(role);
+		message.member.addRole(message.guild.roles.find('name', "Utente Chat Match"));
 	}
 });
 
