@@ -359,7 +359,7 @@ client.on('message', message => {
 	if(!message.guild) return;
 	if(message.content == '/ruoli') {
 		message.channel.send("Scegli un ruolo");
-		message.react(message.guild.emojis.get('572540437953511435'));
+		message.react(message.guild.emojis.get('557223141957435403'));
 	}
 });
 
