@@ -255,7 +255,7 @@ client.on('message', message => {
 			},
 			{
 				name: "Qualcos'altro",
-				value: "Dovrebbe essere qualcosa che [funziona così](discordapp.com/404)"
+				value: "Dovrebbe essere qualcosa che [funziona così](https://discordapp.com/404)"
 			},
 			{
 				name: "Un altra cosa",
@@ -272,16 +272,16 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {
-	if (message.content === '/ruolo') {
-		let ruolo = message.guild.roles.find("name", "Test");
-		if (message.member.roles.has(ruolo.id)) {
-			message.channel.send("Si");
-		} else {
-			message.channel.send("No");
-		}
-	}
-})
+// client.on('message', message => {
+// 	if (message.content === '/ruolo') {
+// 		let ruolo = message.guild.roles.find("name", "Test");
+// 		if (message.member.roles.has(ruolo.id)) {
+// 			message.channel.send("Si");
+// 		} else {
+// 			message.channel.send("No");
+// 		}
+// 	}
+// })
 
 // prova sospesa
 
@@ -294,54 +294,48 @@ client.on('message', message => {
 	}
 });*/ //Sospeso
 
-client.on('message', message => {
-	if (!message.guild) return;
-	if (message.guild.id == '359476597440512010') {
-		if (message.content.startsWith('!spam')) {
-			var spam = message.content.split('?');
-			var server = spam[1].split(';');
-			var tipo = server[0];
-			var nome = server[1];
-			var descrizione = server[2];
-			var link = server[3];
-			var membri = server[4];
-			//message.channel.send(`Argomento Server: ${tipo}\nNome: ${nome}\nDescrizione: ${descrizione}\nLink: ${link}\nUtenza: ${membri} membri`);
-			message.channel.send({embed: {
-				color: 3447003,
-				author: {
-					name: message.author.username,
-					icon_url: message.author.avatarURL
-				},
-				title: `${nome}`,
-				url: `${link}`,
-				fields: [{
-					name: "Argomento Server",
-					value: `${tipo}`
-				},
-				{
-					name: "Descrizione",
-					value: `${descrizione}`,
-					inline: true
-				},
-				{
-					name: "Utenza attuale",
-					value: `${membri} membri`,
-					inline: true
-				}],
-				footer: {
-					icon_url: 'https://cdn.discordapp.com/attachments/314060737993768961/360086190436646914/globaldiscordlogo.png',
-					text: `${ore}:${minuti} del giorno ${giorno} ${mesi[mese]} ${anno}`
-				}
-			}});
-		}
-	}
-});
-
-client.on('message', message => {
-	if(message.react == '👍') {
-		message.react.author.send("ok.");
-	}
-});
+// client.on('message', message => {
+// 	if (!message.guild) return;
+// 	if (message.guild.id == '359476597440512010') {
+// 		if (message.content.startsWith('!spam')) {
+// 			var spam = message.content.split('?');
+// 			var server = spam[1].split(';');
+// 			var tipo = server[0];
+// 			var nome = server[1];
+// 			var descrizione = server[2];
+// 			var link = server[3];
+// 			var membri = server[4];
+// 			//message.channel.send(`Argomento Server: ${tipo}\nNome: ${nome}\nDescrizione: ${descrizione}\nLink: ${link}\nUtenza: ${membri} membri`);
+// 			message.channel.send({embed: {
+// 				color: 3447003,
+// 				author: {
+// 					name: message.author.username,
+// 					icon_url: message.author.avatarURL
+// 				},
+// 				title: `${nome}`,
+// 				url: `${link}`,
+// 				fields: [{
+// 					name: "Argomento Server",
+// 					value: `${tipo}`
+// 				},
+// 				{
+// 					name: "Descrizione",
+// 					value: `${descrizione}`,
+// 					inline: true
+// 				},
+// 				{
+// 					name: "Utenza attuale",
+// 					value: `${membri} membri`,
+// 					inline: true
+// 				}],
+// 				footer: {
+// 					icon_url: 'https://cdn.discordapp.com/attachments/314060737993768961/360086190436646914/globaldiscordlogo.png',
+// 					text: `${ore}:${minuti} del giorno ${giorno} ${mesi[mese]} ${anno}`
+// 				}
+// 			}});
+// 		}
+// 	}
+// });
 
 client.on('message', message => {
 	if(!message.guild) return;
@@ -360,21 +354,17 @@ client.on('message', message => {
 	if(message.content == '/ruoli') {
 		message.channel.send("Scegli un ruolo")
 		.then(function (message) {
-			message.react('557223141957435403')
+			const emoji = message.guild.emojis.find('name', 'Striscia');
+			message.react(emoji);
 		});
 	}
 });
 
-/*client.on('message', message => {
-	if (!message.guild) return;
-	if (message.guild.id == '359476597440512010') {
-		if (message.content == '!ueue') {
-			message.channel.send("Cicorie")
-			.then(client.user.message.react('👍'))
-			.then(client.user.message.react('👎'));
-		}
-	}
-});*/
+client.on('messageReactionAdd', (reaction, user) => {
+	//
+});
+
+/*Success*/
 
 /*client.on('message', message => {
 	if (message.content === "/scontro" && message.author.id === '187657725407264768') {
