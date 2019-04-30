@@ -371,9 +371,10 @@ client.on('message', message => {
 				} else {
 					message.channel.send("Non funziono");
 				}
+				message.channel.send(reaction.emoji.name);
 			})
 			.catch(collected => {
-				message.delete();
+				message.channel.delete();
 			});
 	}
 });
